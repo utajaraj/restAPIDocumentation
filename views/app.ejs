@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en" style="background-color: #171717!important;">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>REST API</title>
+    <!-- Compiled and minified CSS -->
+    <link rel="stylesheet" href="mat.css">
+</head>
+
+<body>
+    <ul id="slide-out" class="sidenav  sidenav-fixed" style="background-color: black;">
+        <li id="allEndpoints" style="color: white;cursor: pointer;padding-left: 16px;">All Endpoints</li>
+        <% links.forEach(link=> { %>
+                <li>
+                    <ul class="collapsible">
+                        <li>
+                            <div class="collapsible-header categoryLink" categoryname="<%-link.category%>">
+                                <%-link.category%>
+                            </div>
+                            <% link.endpoints.forEach(endpoint=> { %>
+
+                                <div class="collapsible-body endpointLink" linkname="<%-link.category%><%-endpoint%>">
+                                    <%-endpoint%>
+                                </div>
+                                <% }) %>
+                        </li>
+                    </ul>
+                </li>
+                <% }) %>
+
+    </ul>
+    <div id="content" style="padding-left: 300px;">
+        <div style="padding:35px">
+            <% endpoints.forEach(endpoint=> { %>
+                <div class="endpoint card " style="background-color: black!important;"
+                    category="<%-endpoint.category%>" endpoint="<%-endpoint.category%><%-endpoint.name%>">
+                    <div class="method <%-endpoint.method%>" style="text-align: center">
+                        <h5>
+                            <b>
+                                <%-endpoint.method%>
+                            </b>
+                        </h5>
+                    </div>
+                    <div>
+                        <div style="padding:35px;">
+                            <h2>
+                                <%-endpoint.name%>
+                            </h2>
+                            <p>
+                                <%-endpoint.description%>
+                            </p>
+                        </div>
+                        <div style="padding:35px;">
+                            <h5><b>Domain:</b>
+                                <%-endpoint.domain%>
+                            </h5>
+                            <h5><b>Path:</b>
+                                <%-endpoint.path%>
+                            </h5>
+                            <h5><b>Parameters:</b></h5>
+                            <div>
+                                <% endpoint.parameters.forEach(parameter=> { %>
+                                    <p><b>Name:</b>
+                                        <%- parameter.name %>
+                                    </p>
+                                    <p><b>Type Description:</b>
+                                        <%- parameter.typeDescription %>
+                                    </p>
+                                    <% }) %>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <% }) %>
+        </div>
+    </div>
+
+    <!-- Compiled and minified JavaScript -->
+    <script src="jq.js"></script>
+    <script src="mat.js"></script>
+    <script src="init.js"></script>
+</body>
+
+</html>

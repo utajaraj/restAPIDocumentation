@@ -1,0 +1,74 @@
+[
+    {
+        "method": "POST",
+        "category": "Authentication",
+        "domain": "auditsrms.com:5080",
+        "name":"login",
+        "path": "/api/v1/login",
+        "description": "Authentication endpoint for user login with username and password",
+        "parameters": [
+            {
+                "name": "username",
+                "typeDescription": "The username allow any type of alphabetical character"
+            },
+            {
+                "name": "password",
+                "typeDescription": "The username allow any type of character"
+            }
+        ]
+    },
+    {
+        "method": "POST",
+        "category": "Authentication",
+        "domain": "auditsrms.com:5080",
+        "name":"logout",
+        "path": "/api/v1/login",
+        "description": "Authentication endpoint for user login with username and password",
+        "parameters": [
+            {
+                "name": "username",
+                "typeDescription": "The username allow any type of alphabetical character"
+            },
+            {
+                "name": "password",
+                "typeDescription": "The username allow any type of character"
+            }
+        ]
+    },
+    {
+        "method": "GET",
+        "category": "Audits",
+        "domain": "auditsrms.com:5080",
+        "name":"logout",
+        "path": "/api/v1/audits",
+        "description": "Authentication endpoint for user login with username and password",
+        "parameters": [
+            {
+                "name": "username",
+                "typeDescription": "The username allow any type of alphabetical character"
+            },
+            {
+                "name": "password",
+                "typeDescription": "The username allow any type of character"
+            }
+        ]
+    },
+    {
+        "method": "DELETE",
+        "category": "Audits",
+        "domain": "auditsrms.com:5080",
+        "name":"logout",
+        "path": "/api/v1/audits",
+        "description": "Authentication endpoint for user login with username and password",
+        "parameters": [
+            {
+                "name": "username",
+                "typeDescription": "The username allow any type of alphabetical character"
+            },
+            {
+                "name": "password",
+                "typeDescription": "The username allow any type of character"
+            }
+        ]
+    }
+]
